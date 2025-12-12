@@ -21,8 +21,8 @@ public class TopicController {
     
     @GetMapping
     public ResponseEntity<List<TopicDTO>> getAllTopics(
-            @RequestParam(required = false) Integer categoryId,
-            @RequestParam(required = false) Integer userId) {
+            @RequestParam(name = "categoryId", required = false) Integer categoryId,
+            @RequestParam(name = "userId", required = false) Integer userId) {
         
         if (categoryId != null) {
             return ResponseEntity.ok(topicService.getTopicsByCategory(categoryId));
